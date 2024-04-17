@@ -20,7 +20,35 @@ body {
 }
 
 body {
+    width: clamp(300px, 100%, 600px);
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#blockquote {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#quote::before {
+    content: open-quote;
+}
+
+#quote {
+    font-size: 1.75rem;
+    font-style: italic;
+    text-align: center;
+}
+
+#quote::after {
+    content: close-quote;
+}
+
+#quote-author {
+    font-size: 1.25rem;
+    font-style: italic;
+    text-align: center;
 }

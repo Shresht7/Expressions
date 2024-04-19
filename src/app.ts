@@ -1,5 +1,8 @@
 // Library
-import express from 'express';
+import express, { Request, Response } from 'express';
+
+// Type Definitions
+import { MessageResponse } from './types';
 
 // Create a new express application instance
 const app = express();
@@ -7,8 +10,10 @@ const app = express();
 // Routes
 // ------
 
-app.get<{}, string>('/', (req, res) => {
-    res.send('Hello World!');
+app.get('/', (req, res: Response<MessageResponse>) => {
+    res.json({
+        message: "Hello, World!"
+    })
 });
 
 // ----------------

@@ -11,7 +11,7 @@ import api from './api';
 import * as middlewares from './middlewares';
 
 // Constants
-import { STATIC_FOLDER } from './constants';
+import { STATIC_FOLDER, LOG_LEVEL } from './constants';
 
 // Create a new express application instance
 const app = express();
@@ -21,7 +21,7 @@ const app = express();
 // ===========
 
 app.use(
-    morgan('dev'),
+    morgan(LOG_LEVEL),
     helmet(),
     cors(),
 )

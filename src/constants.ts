@@ -8,3 +8,5 @@ export const PORT = process.env.PORT || 3000;
 /** The name of the static folder */
 export const STATIC_FOLDER = 'public';
 
+/** The log level for the logger */
+export const LOG_LEVEL = process.env.LOG_LEVEL ?? process.env.NODE_ENV === 'production' ? 'combined' : 'dev';

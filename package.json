@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "node build/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsc -w"
   },
   "author": "Shresht7",
   "license": "MIT",

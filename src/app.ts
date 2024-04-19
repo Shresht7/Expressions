@@ -1,5 +1,8 @@
 // Library
 import express, { Request, Response } from 'express';
+import morgan from 'morgan';
+import helmet from 'helmet';
+import cors from 'cors';
 
 // Routers
 import api from './api';
@@ -12,6 +15,16 @@ import { MessageResponse } from './types';
 
 // Create a new express application instance
 const app = express();
+
+// ===========
+// Middlewares
+// ===========
+
+app.use(
+    morgan('dev'),
+    helmet(),
+    cors(),
+)
 
 // ======
 // Static

@@ -10,8 +10,6 @@ import api from './api';
 // Middlewares
 import * as middlewares from './middlewares';
 
-// Type Definitions
-import { MessageResponse } from './types';
 
 // Create a new express application instance
 const app = express();
@@ -36,13 +34,6 @@ app.use(express.static('public'));
 // ======
 // Routes
 // ======
-
-// Root
-app.get('/', (req, res: Response<MessageResponse>) => {
-    res.json({
-        message: "Hello, World!"
-    })
-});
 
 // API Routes
 app.use('/api/v1', api);

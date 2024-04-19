@@ -11,6 +11,13 @@ import { MessageResponse } from './types';
 const app = express();
 
 // ======
+// Static
+// ======
+
+/** Name of the static folder */
+app.use(express.static('public'));
+
+// ======
 // Routes
 // ======
 

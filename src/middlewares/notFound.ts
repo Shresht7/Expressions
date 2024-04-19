@@ -11,5 +11,14 @@ import { APIError } from '../types';
  * @param next - The Express next function.
  */
 export function notFound(req: Request, res: Response, next: NextFunction) {
-    throw new APIError(`Not Found - ${req.originalUrl}`, 404);
+
+    // If the request is an API request, pass an error to the next middleware
+    if (req.path.startsWith('/api')) {
+        next(new APIError(`Not Found - ${req.originalUrl}`, 404));
+        return;
+    }
+
+    // Show the 404 page if the request is not an API request
+    res.status(404).sendFile('404.html', { root: 'public' });
+
 }

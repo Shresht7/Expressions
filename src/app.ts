@@ -1,5 +1,5 @@
 // Library
-import express, { Request, Response } from 'express';
+import express from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';

@@ -15,12 +15,11 @@ import type { ErrorResponse, APIError } from '../types';
  */
 export function errorHandler(err: APIError, req: Request, res: Response<ErrorResponse>, next: NextFunction) {
 
-    // Set the response status code
-    const statusCode = err.statusCode ?? res.statusCode ?? 500;
-    res.status(statusCode);
+    // Determine the response status code
+    const code = err.statusCode ?? res.statusCode ?? 500;
 
     // Send the error response
-    res.json({
+    res.status(code).json({
         error: err.message,
         stack: process.env.NODE_ENV === 'production' ? '' : err.stack,
     });

@@ -1,9 +1,6 @@
 // Library
 import app from "./app";
-
-// Constants
-/** The port number that the server will listen to */
-const PORT = process.env.PORT || 3000;
+import { PORT } from "./constants";
 
 // Start the server on the specified port
 app.listen(PORT, () => {

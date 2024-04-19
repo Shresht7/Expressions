@@ -10,6 +10,8 @@ import api from './api';
 // Middlewares
 import * as middlewares from './middlewares';
 
+// Constants
+import { STATIC_FOLDER } from './constants';
 
 // Create a new express application instance
 const app = express();
@@ -29,7 +31,7 @@ app.use(
 // ======
 
 /** Name of the static folder */
-app.use(express.static('public'));
+app.use(express.static(STATIC_FOLDER));
 
 // ======
 // Routes

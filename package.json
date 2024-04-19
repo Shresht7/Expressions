@@ -1,0 +1,16 @@
+{
+  "name": "quotes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "node build/index.js",
+    "build": "tsc"
+  },
+  "author": "Shresht7",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  }
+}

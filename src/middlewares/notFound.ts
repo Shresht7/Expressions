@@ -1,5 +1,6 @@
 // Library
 import type { Request, Response, NextFunction } from 'express';
+import { APIError } from '../types';
 
 /**
  * Middleware function to handle 404 Not Found errors.
@@ -10,7 +11,5 @@ import type { Request, Response, NextFunction } from 'express';
  * @param next - The Express next function.
  */
 export function notFound(req: Request, res: Response, next: NextFunction) {
-    res.status(404);
-    const error = new Error(`Not Found - ${req.originalUrl}`);
-    next(error);
+    throw new APIError(`Not Found - ${req.originalUrl}`, 404);
 }

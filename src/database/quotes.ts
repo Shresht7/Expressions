@@ -25,56 +25,23 @@ export const quotes: Quote[] = [
 
 // Create the quotes table
 async function createTable() {
-
-    // SQL statement to create the table
-    const sqlStatement = `
-    CREATE TABLE quotes (
-        id INTEGER PRIMARY KEY,
-        text TEXT,
-        author TEXT
-    )
-    `;
-
-    // Return a promise that resolves when the table is created
-    return new Promise<void>((resolve, reject) => {
-        db.run(sqlStatement, (err) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve();
-            }
-        });
-    });
-
+    return db.run(`
+        CREATE TABLE IF NOT EXISTS quotes (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            text TEXT NOT NULL,
+            author TEXT NOT NULL
+        )`
+    );
 }
 
 // Insert the quotes into the table
 async function insertQuotes() {
-
-    // SQL statement to insert a quote
-    const sqlStatement = `INSERT INTO quotes (text, author) VALUES (?, ?)`;
-
-    // Return a promise that resolves when all quotes are inserted
-    return new Promise<void>((resolve, reject) => {
-
-        // Prepare the statement for execution with parameters
-        const stmt = db.prepare(sqlStatement);
-
-        // Insert each quote into the table
-        quotes.forEach(quote => {
-            stmt.run(quote.text, quote.author);
-        });
-
-        // Finalize the statement to release resources
-        stmt.finalize((err) => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve();
-            }
-        });
-
-    });
+    for (const quote of quotes) {
+        await db.run(
+            'INSERT INTO quotes (text, author) VALUES (?, ?)',
+            [quote.text, quote.author]
+        );
+    }
 }
 
 /** Create the table and insert the quotes */

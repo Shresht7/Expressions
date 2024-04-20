@@ -12,25 +12,6 @@ export interface QuoteModel {
     author: string;
 }
 
-// Data
-export const quotes: QuoteModel[] = [
-    {
-        id: 1,
-        text: 'The best way to predict the future is to invent it.',
-        author: 'Alan Kay'
-    },
-    {
-        id: 2,
-        text: 'The only way to get started is to quit talking and begin doing.',
-        author: 'Walt Disney'
-    },
-    {
-        id: 3,
-        text: 'Don\'t watch the clock; do what it does. Keep going.',
-        author: 'Sam Levenson'
-    },
-];
-
 db.run(`
     CREATE TABLE IF NOT EXISTS quotes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -61,10 +42,6 @@ export async function del(id: number): Promise<number> {
 
 export async function count(): Promise<number> {
     return db.get<number>('SELECT COUNT(*) AS count FROM quotes').then(count => count ?? 0);
-}
-
-export async function seed() {
-    return Promise.all(quotes.map(quote => create(quote)));
 }
 
 export async function clear() {

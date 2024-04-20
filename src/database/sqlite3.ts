@@ -55,7 +55,7 @@ export class SQLite3 {
      * @returns A promise that resolves when the query is run
      */
     async run(sql: string, params: any[] = []) {
-        return new Promise((resolve, reject) => {
+        return new Promise<number>((resolve, reject) => {
             this.db.run(sql, params, function (err) {
                 if (err) { reject(err) }
                 else { resolve(this.lastID) }

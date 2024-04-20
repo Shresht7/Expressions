@@ -1,5 +1,5 @@
 // Data
-import { quotes } from "../data/quotes";
+import { db } from "../database";
 
 // -----------
 // QUOTE MODEL
@@ -12,10 +12,14 @@ export interface Quote {
     author: string;
 }
 
-export function getAllQuotes(): Quote[] {
-    return quotes;
-}
-
-export function getQuoteById(id: number): Quote | undefined {
-    return quotes.find(quote => quote.id === id);
+export async function getQuoteById(id: number): Promise<Quote | undefined> {
+    return new Promise((resolve, reject) => {
+        db.get<Quote>('SELECT * FROM quotes WHERE id = ?', [id], (err, row) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(row);
+            }
+        });
+    });
 }

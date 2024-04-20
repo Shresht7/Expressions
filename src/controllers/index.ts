@@ -9,7 +9,7 @@ import type { Request, Response, NextFunction } from "express";
 // CONTROLLERS
 // ===========
 
-export function getQuote(req: Request, res: Response<Quote>, next: NextFunction) {
+export async function getQuote(req: Request, res: Response<Quote>, next: NextFunction) {
 
     // Get the ID from the request parameters
     const id = parseInt(req.params.id);
@@ -20,7 +20,7 @@ export function getQuote(req: Request, res: Response<Quote>, next: NextFunction)
     }
 
     // Get the quote by ID
-    const quote = getQuoteById(id);
+    const quote = await getQuoteById(id);
 
     // If the quote does not exist, send an error
     if (!quote) {

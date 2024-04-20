@@ -1,5 +1,5 @@
 // Library
-import { Quote, getQuoteById } from "../models/quote";
+import * as quotes from "../models/quote";
 import { APIError } from "../types";
 
 // Type Definitions
@@ -9,7 +9,7 @@ import type { Request, Response, NextFunction } from "express";
 // CONTROLLERS
 // ===========
 
-export async function getQuote(req: Request, res: Response<Quote>, next: NextFunction) {
+export async function getQuote(req: Request, res: Response<quotes.QuoteModel>, next: NextFunction) {
 
     // Get the ID from the request parameters
     const id = parseInt(req.params.id);
@@ -20,7 +20,7 @@ export async function getQuote(req: Request, res: Response<Quote>, next: NextFun
     }
 
     // Get the quote by ID
-    const quote = await getQuoteById(id);
+    const quote = await quotes.find(id);
 
     // If the quote does not exist, send an error
     if (!quote) {

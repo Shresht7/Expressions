@@ -5,6 +5,11 @@ import { DATABASE_PATH } from '../constants';
 // Verbose mode for debugging
 const sqlite3 = sqlite.verbose();
 
+/**
+ * A class for interacting with an SQLite3 database.
+ * This class is a wrapper around the sqlite3 library that provides
+ * async/await methods for running queries.
+ */
 class SQLite3 {
 
     /** Database instance for the application */

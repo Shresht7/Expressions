@@ -10,3 +10,6 @@ export const STATIC_FOLDER = 'public';
 
 /** The log level for the logger */
 export const LOG_LEVEL = process.env.LOG_LEVEL ?? process.env.NODE_ENV === 'production' ? 'combined' : 'dev';
+
+/** The database path */
+export const DATABASE_PATH = process.env.DATABASE_PATH ?? ':memory:';

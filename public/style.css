@@ -30,6 +30,13 @@ body {
     align-items: center;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #blockquote {
     display: flex;
     flex-direction: column;

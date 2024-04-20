@@ -1,4 +1,6 @@
 :root {
+    --font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
     --clr-background: #272727;
     --clr-text: #f3f3f3;
 }
@@ -17,6 +19,7 @@ body {
     width: 100dvw;
     background-color: var(--clr-background);
     color: var(--clr-text);
+    font-family: var(--font-family);
 }
 
 body {

@@ -6,7 +6,7 @@
 import express from 'express';
 
 // Controllers
-import { getQuoteById, getRandomQuote } from '../controllers';
+import * as controllers from '../controllers';
 
 // Create a router for the API
 const router = express.Router();
@@ -14,9 +14,11 @@ const router = express.Router();
 // Routes
 // ------
 
-router.get('/quote/random', getRandomQuote);
+// GET RANDOM QUOTE
+router.get('/quote/random', controllers.getRandomQuote);
 
-router.get('/quote/:id', getQuoteById);
+// GET QUOTE BY ID
+router.get('/quote/:id', controllers.getQuoteById);
 
 // ------------------
 export default router

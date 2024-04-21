@@ -1,5 +1,5 @@
 // Library
-import { Quote, find, random } from "../models/quote";
+import * as Quotes from "../models/quote";
 import { APIError } from "../types";
 
 // Type Definitions
@@ -13,16 +13,16 @@ import type { Request, Response, NextFunction } from "express";
 // ----------------
 
 /** Retrieves a random quote and sends it as a JSON response */
-export async function getRandomQuote(req: Request, res: Response<Quote>, next: NextFunction) {
-    const quote = random(); // Get a random quote
-    res.json(quote);        // Send the quote
+export async function getRandomQuote(req: Request, res: Response<Quotes.Quote>, next: NextFunction) {
+    const quote = Quotes.random();  // Get a random quote
+    res.json(quote);                // Send the quote
 }
 
 // GET QUOTE BY ID
 // ---------------
 
 /** Retrieves a quote by its ID and sends it as a JSON response */
-export async function getQuoteById(req: Request, res: Response<Quote>, next: NextFunction) {
+export async function getQuoteById(req: Request, res: Response<Quotes.Quote>, next: NextFunction) {
 
     // Get the ID from the request parameters
     const id = parseInt(req.params.id);
@@ -33,7 +33,7 @@ export async function getQuoteById(req: Request, res: Response<Quote>, next: Nex
     }
 
     // Get the quote by ID
-    const quote = find(id);
+    const quote = Quotes.find(id);
 
     // If the quote does not exist, send an error
     if (!quote) {

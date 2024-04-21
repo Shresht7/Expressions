@@ -1,5 +1,5 @@
 // Library
-import { Quote, find } from "../models/quote";
+import { Quote, find, random } from "../models/quote";
 import { APIError } from "../types";
 
 // Type Definitions
@@ -29,4 +29,14 @@ export async function getQuote(req: Request, res: Response<Quote>, next: NextFun
 
     // Send the quote
     res.json(quote);
+}
+
+export async function getRandomQuote(req: Request, res: Response<Quote>, next: NextFunction) {
+
+    // Get a random quote
+    const quote = random();
+
+    // Send the quote
+    res.json(quote);
+
 }

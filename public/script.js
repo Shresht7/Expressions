@@ -17,13 +17,25 @@ document.body.addEventListener('keyup', (event) => {
 // ----------------
 
 /**
- * Retrieves a random quote from the server and updates the quote and author elements on the page.
+ * Updates the quote and author elements on the page.
+ * @param {string} quote - The quote to display.
+ * @param {string} author - The author of the quote.
  */
-function getRandomQuote() {
-    fetch(`/api/v1/quote/random`)
+function updateQuote(quote, author) {
+    document.getElementById('quote').innerText = quote;
+    if (author) {
+        document.getElementById('quote-author').innerText = "— " + author;
+    }
+
+}
+
+/**
+ * Retrieves a random quote from the server
+ * and updates the quote and author elements on the page.
+ */
+async function getRandomQuote() {
+    const { quote, author } = await fetch(`/api/v1/quote/random`)
         .then(response => response.json())
-        .then((data) => {
-            document.getElementById('quote').innerText = data.quote;
-            document.getElementById('quote-author').innerText = "— " + data.author;
-        });
+
+    updateQuote(quote, author);
 }

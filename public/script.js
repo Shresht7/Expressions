@@ -23,10 +23,7 @@ document.body.addEventListener('keyup', (event) => {
  */
 function updateQuote(quote, author) {
     document.getElementById('quote').innerText = quote;
-    if (author) {
-        document.getElementById('quote-author').innerText = "— " + author;
-    }
-
+    document.getElementById('quote-author').innerText = author ? "— " + author : "";
 }
 
 /**

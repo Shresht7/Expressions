@@ -1,15 +1,11 @@
 // Library
-import { data } from "../database";
+import { quotes } from "../database";
 
 // Models
 export interface Quote {
     quote: string;
     author: string;
 }
-
-// ----------------------------
-const quotes = data as Quote[];
-// ----------------------------
 
 /**
  * Gets all quotes.

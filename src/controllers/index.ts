@@ -9,7 +9,7 @@ import type { Request, Response, NextFunction } from "express";
 // CONTROLLERS
 // ===========
 
-export async function getQuote(req: Request, res: Response<Quote>, next: NextFunction) {
+export async function getQuoteById(req: Request, res: Response<Quote>, next: NextFunction) {
 
     // Get the ID from the request parameters
     const id = parseInt(req.params.id);

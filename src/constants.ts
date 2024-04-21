@@ -12,4 +12,4 @@ export const STATIC_FOLDER = 'public';
 export const LOG_LEVEL = process.env.LOG_LEVEL ?? process.env.NODE_ENV === 'production' ? 'combined' : 'dev';
 
 /** The database path */
-export const DATABASE_PATH = process.env.DATABASE_PATH ?? ':memory:';
+export const DATABASE_PATH = process.env.DATABASE_PATH ?? 'data.json';

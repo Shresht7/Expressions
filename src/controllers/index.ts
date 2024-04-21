@@ -9,6 +9,19 @@ import type { Request, Response, NextFunction } from "express";
 // CONTROLLERS
 // ===========
 
+// GET RANDOM QUOTE
+// ----------------
+
+/** Retrieves a random quote and sends it as a JSON response */
+export async function getRandomQuote(req: Request, res: Response<Quote>, next: NextFunction) {
+    const quote = random(); // Get a random quote
+    res.json(quote);        // Send the quote
+}
+
+// GET QUOTE BY ID
+// ---------------
+
+/** Retrieves a quote by its ID and sends it as a JSON response */
 export async function getQuoteById(req: Request, res: Response<Quote>, next: NextFunction) {
 
     // Get the ID from the request parameters
@@ -29,14 +42,4 @@ export async function getQuoteById(req: Request, res: Response<Quote>, next: Nex
 
     // Send the quote
     res.json(quote);
-}
-
-export async function getRandomQuote(req: Request, res: Response<Quote>, next: NextFunction) {
-
-    // Get a random quote
-    const quote = random();
-
-    // Send the quote
-    res.json(quote);
-
 }

@@ -38,7 +38,7 @@ export async function getQuoteById(req: Request, res: Response<Quotes.Quote>, ne
 
     // If the ID is not a number, send an error
     if (isNaN(id)) {
-        return next(new APIError('Invalid ID', 400));
+        return next(new APIError(400, 'Invalid ID'));
     }
 
     // Get the quote by ID
@@ -46,7 +46,7 @@ export async function getQuoteById(req: Request, res: Response<Quotes.Quote>, ne
 
     // If the quote does not exist, send an error
     if (!quote) {
-        return next(new APIError('Quote not found', 404));
+        return next(new APIError(404, 'Quote not found'));
     }
 
     // Send the quote

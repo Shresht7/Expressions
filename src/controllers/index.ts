@@ -9,6 +9,15 @@ import type { Request, Response, NextFunction } from "express";
 // CONTROLLERS
 // ===========
 
+// GET ALL QUOTES
+// --------------
+
+/** Retrieves all quotes and sends them as a JSON response */
+export async function getAllQuotes(req: Request, res: Response<Quotes.Quote[]>, next: NextFunction) {
+    const quotes = Quotes.all();     // Get all quotes
+    res.json(quotes);                // Send the quotes
+}
+
 // GET RANDOM QUOTE
 // ----------------
 

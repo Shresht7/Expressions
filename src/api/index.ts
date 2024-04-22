@@ -14,6 +14,9 @@ const router = express.Router();
 // Routes
 // ------
 
+// GET ALL QUOTES
+router.get('/quotes', controllers.getAllQuotes);
+
 // GET RANDOM QUOTE
 router.get('/quote/random', controllers.getRandomQuote);
 

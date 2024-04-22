@@ -11,7 +11,12 @@ if (!fs.existsSync(DATABASE_PATH)) {
 }
 
 // Read the contents of the database file
-const contents = fs.readFileSync(DATABASE_PATH, 'utf-8');
+let contents
+try {
+    contents = fs.readFileSync(DATABASE_PATH, 'utf-8');
+} catch (err) {
+    throw new Error(`Failed to read database file: ${DATABASE_PATH}`);
+}
 
 let quotes: Quote[];
 try {

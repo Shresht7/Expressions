@@ -14,7 +14,7 @@ export function notFound(req: Request, res: Response, next: NextFunction) {
 
     // If the request is an API request, pass an error to the next middleware
     if (req.path.startsWith('/api')) {
-        next(new APIError(`Not Found - ${req.originalUrl}`, 404));
+        next(new APIError(404, `Not Found - ${req.originalUrl}`));
         return;
     }
 

@@ -1,6 +1,7 @@
 // Library
 import type { Request, Response, NextFunction } from 'express';
 import { APIError } from '../types';
+import { STATIC_FOLDER } from '../constants';
 
 /**
  * Middleware function to handle 404 Not Found errors.
@@ -19,6 +20,6 @@ export function notFound(req: Request, res: Response, next: NextFunction) {
     }
 
     // Show the 404 page if the request is not an API request
-    res.status(404).sendFile('404.html', { root: 'public' });
+    res.status(404).sendFile('404.html', { root: STATIC_FOLDER });
 
 }

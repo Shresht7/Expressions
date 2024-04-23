@@ -51,6 +51,7 @@ main {
     font-size: 1.75rem;
     font-style: italic;
     text-align: center;
+    text-wrap: balance;
 }
 
 #quote::after {

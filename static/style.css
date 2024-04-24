@@ -97,6 +97,10 @@ main {
 /* ANIMATIONS */
 /* ---------- */
 
+.animation-delay {
+    --animation-delay: 200ms;
+}
+
 @keyframes fade {
     from {
         opacity: 0;
@@ -109,14 +113,19 @@ main {
 
 .fade-in {
     opacity: 0;
-    animation: fade var(--animation-duration) ease-in forwards;
+    animation-name: fade;
+    animation-duration: var(--animation-duration);
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: var(--animation-delay, 0ms);
 }
 
 .fade-out {
     opacity: 1;
-    animation: fade var(--animation-duration) ease-in forwards reverse;
-}
-
-.animation-delay {
-    animation-delay: 150ms;
+    animation-name: fade;
+    animation-direction: reverse;
+    animation-duration: var(--animation-duration);
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: var(--animation-delay, 0ms);
 }

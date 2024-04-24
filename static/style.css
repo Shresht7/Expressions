@@ -101,6 +101,11 @@ main {
     margin-left: var(--quote-margin);
 }
 
+#quote-author::before {
+    content: attr(data-prefix);
+    margin-right: 0.5rem;
+}
+
 #quote-author {
     font-size: 1.25rem;
 }

@@ -71,7 +71,10 @@ function updateQuote(quote, author) {
     // Create a new blockquote element
     const blockquote = template.content.cloneNode(true);
     blockquote.getElementById('quote').innerText = quote;
-    blockquote.getElementById('quote-author').innerText = author ? "— " + author : "";
+    if (author) {
+        blockquote.getElementById('quote-author').innerText = author;
+        blockquote.getElementById('quote-author').setAttribute('data-prefix', '—');
+    }
 
     // Add the blockquote element to the main element
     main.appendChild(blockquote);

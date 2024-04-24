@@ -65,7 +65,8 @@ async function getRandomQuote() {
  * @param {string} author - The author of the quote
  */
 function updateQuote(quote, author) {
-    main.innerHTML = ''; // Clear the main element before adding a new quote
+    // Remove the existing blockquote element
+    main.querySelector('#blockquote')?.remove();
 
     // Create a new blockquote element
     const blockquote = template.content.cloneNode(true);

@@ -13,13 +13,16 @@
 <body>
 
     <main>
-        <h1 class="font-italic">Expressions</h1>
+        <blockquote id="blockquote" class="fade-out" cite="">
+            <h1 class="font-italic">Expressions</h1>
+        </blockquote>
     </main>
 
     <template id="quote-template">
-        <blockquote id="blockquote" class="fade-in" cite="">
-            <p id="quote" slot="quote" class="font-italic text-center"></p>
-            <footer id="quote-author" slot="author" class="font-italic text-center"></footer>
+        <blockquote id="blockquote" cite="">
+            <p id="quote" class="font-italic text-center fade-in"></p>
+            <footer id="quote-author" class="font-italic text-center fade-in animation-delay">
+            </footer>
         </blockquote>
     </template>
 

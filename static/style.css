@@ -108,9 +108,15 @@ main {
 }
 
 .fade-in {
-    animation: fade var(--animation-duration) ease-in;
+    opacity: 0;
+    animation: fade var(--animation-duration) ease-in forwards;
 }
 
 .fade-out {
-    animation: fade var(--animation-duration) ease-in reverse;
+    opacity: 1;
+    animation: fade var(--animation-duration) ease-in forwards reverse;
+}
+
+.animation-delay {
+    animation-delay: 150ms;
 }

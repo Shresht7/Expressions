@@ -2,6 +2,20 @@
 // SCRIPT
 // ------
 
+// ------------
+// DOM ELEMENTS
+// ------------
+
+/** The main element */
+const main = /** @type HTMLDivElement */ (document.querySelector('main'));
+
+/** The quote template */
+const template = /** @type HTMLTemplateElement */ (document.getElementById('quote-template'));
+
+// --------------
+// INITIALIZATION
+// --------------
+
 /** The collection of quotes */
 const quotes = await getQuotes();
 
@@ -51,6 +65,13 @@ async function getRandomQuote() {
  * @param {string} author - The author of the quote
  */
 function updateQuote(quote, author) {
-    document.getElementById('quote').innerText = quote;
-    document.getElementById('quote-author').innerText = author ? "— " + author : "";
+    main.innerHTML = ''; // Clear the main element before adding a new quote
+
+    // Create a new blockquote element
+    const blockquote = template.content.cloneNode(true);
+    blockquote.getElementById('quote').innerText = quote;
+    blockquote.getElementById('quote-author').innerText = author ? "— " + author : "";
+
+    // Add the blockquote element to the main element
+    main.appendChild(blockquote);
 }

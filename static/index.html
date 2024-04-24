@@ -11,19 +11,18 @@
 </head>
 
 <body>
+
     <main>
-
-        <blockquote id="blockquote" cite="">
-            <p id="quote">
-                <!-- The quote text goes here -->
-                Expressions
-            </p>
-            <footer id="quote-author">
-                <!-- The quote author goes here -->
-            </footer>
-        </blockquote>
-
+        <h1 class="font-italic">Expressions</h1>
     </main>
+
+    <template id="quote-template">
+        <blockquote id="blockquote" class="fade-in" cite="">
+            <p id="quote" slot="quote" class="font-italic text-center"></p>
+            <footer id="quote-author" slot="author" class="font-italic text-center"></footer>
+        </blockquote>
+    </template>
+
 </body>
 
 </html>

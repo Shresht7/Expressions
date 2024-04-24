@@ -58,9 +58,18 @@ body {
     text-align: center;
 }
 
+.text-balance {
+    text-wrap: balance;
+}
+
 /* -------- */
 /* SPECIFIC */
 /* -------- */
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+}
 
 main {
     display: flex;

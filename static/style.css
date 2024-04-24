@@ -87,15 +87,18 @@ main {
 
 #quote::before {
     content: open-quote;
+    margin-right: var(--quote-margin);
 }
 
 #quote {
     font-size: 1.75rem;
     text-wrap: balance;
+    --quote-margin: 0.5rem;
 }
 
 #quote::after {
     content: close-quote;
+    margin-left: var(--quote-margin);
 }
 
 #quote-author {

@@ -12,4 +12,4 @@ export const STATIC_FOLDER = 'static';
 export const LOG_LEVEL = process.env.LOG_LEVEL ?? process.env.NODE_ENV === 'production' ? 'combined' : 'dev';
 
 /** The database path */
-export const DATABASE_PATH = process.env.DATABASE_PATH ?? 'data/quotes.json';
+export const DATABASE_PATH = process.env.DATABASE_PATH ?? 'static/quotes.json';

@@ -140,7 +140,7 @@ body>footer {
 }
 
 body>footer:hover {
-    opacity: 0.25;
+    opacity: 0.33;
     transform: translateY(0);
 }
 

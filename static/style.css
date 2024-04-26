@@ -12,6 +12,12 @@
     --animation-duration: 500ms;
 }
 
+::selection {
+    background-color: var(--clr-text);
+    color: var(--clr-background);
+
+}
+
 @media (prefers-reduced-motion: reduce) {
     :root {
         --animation-duration-fast: 0ms !important;

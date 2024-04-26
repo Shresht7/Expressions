@@ -39,7 +39,9 @@ body {
 }
 
 body {
-    width: clamp(300px, 100%, 600px);
+    --min-width: 300px;
+    --max-width: 768px;
+    width: clamp(var(--min-width), 100%, var(--max-width));
     margin: 0 auto;
     display: flex;
     justify-content: center;

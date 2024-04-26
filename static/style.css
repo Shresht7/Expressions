@@ -46,6 +46,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* ----- */
@@ -110,6 +117,31 @@ main {
 
 #quote-author {
     font-size: 1.25rem;
+}
+
+body>footer {
+    width: 100%;
+    height: 25dvh;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.5rem;
+
+    font-size: 0.75rem;
+
+    opacity: 0.10;
+    transform: translateY(2rem);
+    transition: opacity var(--animation-duration) ease-in, transform var(--animation-duration) cubic-bezier(0.1, 0.83, 0.41, 1.59);
+}
+
+body>footer:hover {
+    opacity: 0.25;
+    transform: translateY(0);
 }
 
 /* ---------- */

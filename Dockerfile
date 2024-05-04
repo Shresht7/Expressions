@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
+# Build the source code
+RUN npm run build
+
 # Expose port 3000 for the application
 EXPOSE 3000
 

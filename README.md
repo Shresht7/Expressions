@@ -12,7 +12,7 @@ A quotes app.
 
 Returns a list of all the quotes.
 
-```http
+```sh
   GET /api/v1/quotes
 ```
 
@@ -20,7 +20,7 @@ Returns a list of all the quotes.
 
 Returns a quote by id.
 
-```http
+```sh
   GET /api/v1/quotes/${id}
 ```
 
@@ -28,7 +28,7 @@ Returns a quote by id.
 
 Returns a random quote.
 
-```http
+```sh
   GET /api/v1/quotes/random
 ```
 

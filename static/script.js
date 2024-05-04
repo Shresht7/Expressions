@@ -106,6 +106,9 @@ let tipsTimeout;
 /** Shows the tips element */
 function showTips() {
     tips.classList.remove('hidden');
+    if ('ontouchend' in document.body) {
+        tips.innerText = 'Tap the screen to get a new quote';
+    }
 }
 
 /** Hides the tips element */

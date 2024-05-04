@@ -29,6 +29,11 @@ document.body.addEventListener('keyup', (event) => {
     }
 });
 
+// Get a new quote when the user taps on the screen
+document.body.addEventListener('touchend', (event) => {
+    getRandomQuote();
+});
+
 // ----------------
 // HELPER FUNCTIONS
 // ----------------

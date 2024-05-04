@@ -28,7 +28,7 @@ const helmet = PRODUCTION_ENVIRONMENT
     : _helmet({
         contentSecurityPolicy: {
             directives: {
-                // ! The upgradeInsecureRequests directive upgrades any incomming http request
+                // ! The upgradeInsecureRequests directive upgrades any incoming http request
                 // ! to an https request. While a great security measure, it makes all requests
                 // ! made on the local network fail because there is no certificate. All http
                 // ! requests are automatically upgraded to https which makes them fail.

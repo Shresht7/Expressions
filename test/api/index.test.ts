@@ -16,9 +16,9 @@ describe('API', () => {
             .expect(200, quotes);
     })
 
-    test('GET /api/v1/quote/random', async () => {
+    test('GET /api/v1/quotes/random', async () => {
         await request(app)
-            .get('/api/v1/quote/random')
+            .get('/api/v1/quotes/random')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200)
@@ -30,17 +30,17 @@ describe('API', () => {
             });
     })
 
-    test('GET /api/v1/quote/1', async () => {
+    test('GET /api/v1/quotes/1', async () => {
         await request(app)
-            .get('/api/v1/quote/1')
+            .get('/api/v1/quotes/1')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(200, quotes[1]);
     })
 
-    test('GET /api/v1/quote/10000000', async () => {
+    test('GET /api/v1/quotes/10000000', async () => {
         await request(app)
-            .get('/api/v1/quote/10000000')
+            .get('/api/v1/quotes/10000000')
             .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(404);

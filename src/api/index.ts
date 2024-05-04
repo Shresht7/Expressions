@@ -18,10 +18,10 @@ const router = express.Router();
 router.get('/quotes', controllers.getAllQuotes);
 
 // GET RANDOM QUOTE
-router.get('/quote/random', controllers.getRandomQuote);
+router.get('/quotes/random', controllers.getRandomQuote);
 
 // GET QUOTE BY ID
-router.get('/quote/:id', controllers.getQuoteById);
+router.get('/quotes/:id', controllers.getQuoteById);
 
 // ------------------
 export default router

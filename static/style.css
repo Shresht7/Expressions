@@ -220,3 +220,25 @@ body>footer:hover {
     animation-fill-mode: forwards;
     animation-delay: var(--animation-delay, 0ms);
 }
+
+@keyframes pulse {
+    0% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.25;
+    }
+}
+
+.pulse {
+    --animation-duration: 3000ms;
+    animation-name: pulse;
+    animation-duration: var(--animation-duration);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation-iteration-count: infinite;
+}

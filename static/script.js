@@ -26,12 +26,14 @@ getRandomQuote();
 document.body.addEventListener('keyup', (event) => {
     if (event.code === 'Space') {
         getRandomQuote();
+        hideTips();
     }
 });
 
 // Get a new quote when the user taps on the screen
 document.body.addEventListener('touchend', (event) => {
     getRandomQuote();
+    hideTips();
 });
 
 // ----------------
@@ -84,3 +86,36 @@ function updateQuote(quote, author) {
     // Add the blockquote element to the main element
     main.appendChild(blockquote);
 }
+
+// ----
+// TIPS
+// ----
+
+/** The timeout for showing the tips element (in seconds) */
+const TIPS_FIRST_TIMEOUT = 5000;
+
+/** The timeout for hiding the tips element (in seconds) */
+const TIPS_SUBSEQUENT_TIMEOUT = 15000;
+
+/** The tips element */
+const tips = /** @type HTMLDivElement */ (document.getElementById('tips'));
+
+/** The timeout for hiding the tips element */
+let tipsTimeout;
+
+/** Shows the tips element */
+function showTips() {
+    tips.classList.remove('hidden');
+}
+
+/** Hides the tips element */
+function hideTips() {
+    tips.classList.add('hidden');
+    if (tipsTimeout) {
+        clearTimeout(tipsTimeout)
+    };
+    tipsTimeout = setTimeout(showTips, TIPS_SUBSEQUENT_TIMEOUT); // Show tips again after 15 seconds
+}
+
+// Show tips after 5 seconds on page load
+tipsTimeout = setTimeout(showTips, TIPS_FIRST_TIMEOUT);

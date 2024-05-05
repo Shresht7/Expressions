@@ -236,5 +236,6 @@ body>footer:hover {
     animation-name: pulse;
     animation-duration: var(--animation-duration);
     animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    animation-iteration-count: infinite;
+    animation-iteration-count: var(--animation-iteration-count, infinite);
+    animation-fill-mode: forwards;
 }

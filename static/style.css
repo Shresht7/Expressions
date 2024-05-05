@@ -186,10 +186,6 @@ body>footer:hover {
 /* ANIMATIONS */
 /* ---------- */
 
-.animation-delay {
-    --animation-delay: 500ms;
-}
-
 @keyframes fade {
     from {
         opacity: 0;
@@ -218,7 +214,7 @@ body>footer:hover {
     animation-duration: var(--animation-duration);
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
-    animation-delay: var(--animation-delay, 0ms);
+    animation-delay: var(--animation-delay, 0ms)
 }
 
 @keyframes pulse {

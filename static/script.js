@@ -107,7 +107,7 @@ let tipsTimeout;
 function showTips() {
     tips.classList.remove('hidden');
     if ('ontouchend' in document.body) {
-        tips.innerText = 'Tap the screen to get a new quote';
+        tips.innerText = 'Tap the screen for more';
     }
 }
 

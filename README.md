@@ -2,7 +2,7 @@
 
 A quotes app.
 
-<!-- TODO: Add a screenshot of the webpage -->
+![Screenshot](./screenshot.png)
 
 ---
 

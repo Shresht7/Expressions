@@ -20,6 +20,7 @@
 
 @media (prefers-reduced-motion: reduce) {
     :root {
+        animation: none !important;
         --animation-duration-fast: 0ms !important;
         --animation-duration: 0ms !important;
     }

@@ -5,8 +5,11 @@
 :root {
     --font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
-    --clr-background: #272727;
-    --clr-text: #f3f3f3;
+    --clr-black: #272727;
+    --clr-white: #f3f3f3;
+
+    --clr-background: var(--clr-black);
+    --clr-text: var(--clr-white);
 
     --animation-duration-fast: 100ms;
     --animation-duration: 500ms;
@@ -16,6 +19,13 @@
     background-color: var(--clr-text);
     color: var(--clr-background);
 
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --clr-background: var(--clr-white);
+        --clr-text: var(--clr-black);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

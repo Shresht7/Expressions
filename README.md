@@ -2,7 +2,7 @@
 
 A quotes app.
 
-![Screenshot](./screenshot.png)
+![Screenshot](./static/screenshot.png)
 
 ---
 

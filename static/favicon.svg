@@ -1,5 +1,20 @@
 <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
     xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 7C8 6.44772 8.44772 6 9 6H23C23.5523 6 24 6.44772 24 7V20.6198C24 20.8647 23.9101 21.1011 23.7474 21.2842L16.2983 29.6644C16.1086 29.8779 15.8366 30 15.5509 30H10.3199C9.44274 30 8.99062 28.9511 9.59292 28.3134L14.9071 22.6866C15.5094 22.0489 15.0573 21 14.1801 21H9C8.44772 21 8 20.5523 8 20V7Z" fill="#7E7E7E" stroke="#333"/>
-    <path d="M15 10C15 9.44772 15.4477 9 16 9H30C30.5523 9 31 9.44772 31 10V23.6198C31 23.8647 30.9101 24.1011 30.7474 24.2842L23.2983 32.6644C23.1086 32.8779 22.8366 33 22.5509 33H17.3199C16.4427 33 15.9906 31.9511 16.5929 31.3134L21.9071 25.6866C22.5094 25.0489 22.0573 24 21.1801 24H16C15.4477 24 15 23.5523 15 23V10Z" fill="#EEEAEA" stroke="#333"/>
+    <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#7E7E7E;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#333;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#EEEAEA;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#CCCCCC;stop-opacity:1" />
+        </linearGradient>
+        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feOffset result="offOut" in="SourceAlpha" dx="2" dy="2" />
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="2" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+        </filter>
+    </defs>
+    <path d="M8 7C8 6.44772 8.44772 6 9 6H23C23.5523 6 24 6.44772 24 7V20.6198C24 20.8647 23.9101 21.1011 23.7474 21.2842L16.2983 29.6644C16.1086 29.8779 15.8366 30 15.5509 30H10.3199C9.44274 30 8.99062 28.9511 9.59292 28.3134L14.9071 22.6866C15.5094 22.0489 15.0573 21 14.1801 21H9C8.44772 21 8 20.5523 8 20V7Z" fill="url(#grad1)" stroke="#333" filter="url(#shadow)" />
+    <path d="M15 10C15 9.44772 15.4477 9 16 9H30C30.5523 9 31 9.44772 31 10V23.6198C31 23.8647 30.9101 24.1011 30.7474 24.2842L23.2983 32.6644C23.1086 32.8779 22.8366 33 22.5509 33H17.3199C16.4427 33 15.9906 31.9511 16.5929 31.3134L21.9071 25.6866C22.5094 25.0489 22.0573 24 21.1801 24H16C15.4477 24 15 23.5523 15 23V10Z" fill="url(#grad2)" stroke="#333" filter="url(#shadow)" />
 </svg>
